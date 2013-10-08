@@ -6,7 +6,14 @@ ruby "1.9.3"
 gem 'rails', '4.0.0'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
 
 # Add gem -------------
 	gem 'sorcery'
