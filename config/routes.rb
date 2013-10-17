@@ -1,21 +1,24 @@
 Cuayolo::Application.routes.draw do
-  get "sessions/new"
-  get "sessions/create"
-  get "sessions/destroy"
-  get "users/index"
-  get "users/show"
-  get "users/new"
-  get "users/create"
-  get "users/edit"
-  get "users/update"
-  get "users/destroy"
 
+  
+  #get 'newavatar/:id' => 'create_avatars#show', as: :avatar
+  get 'welcome' => 'welcome_home#index' #, as: :welcome
+  get 'test' => 'test_apt#index'
+  get 'dashboard' => 'dashboards#index'
+  get 'avatar' => 'create_avatars#index'
+  get 'logout' => 'sessions#destroy',  as: :logout
+  get 'login' => 'sessions#new', as: :login 
+  get 'signup' => 'users#new', as: :signup
   resources :users
+  resources :sessions
+  root 'home#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

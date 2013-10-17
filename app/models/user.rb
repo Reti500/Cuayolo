@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
+
   has_one :asignarEscuela
   has_one :escuela, through: :asignarEscuela
 
@@ -8,6 +9,7 @@ class User < ActiveRecord::Base
   validates :username, :email, uniqueness: true
 
   validates_confirmation_of :password
+  validates_presence_of :password, on: :create
 
   validates_format_of :email, :with => /\A(.+)@(.+)\.(.+)\z/
 end

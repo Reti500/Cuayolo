@@ -11,12 +11,13 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 # Add gem -------------
 	gem 'sorcery'
 	gem 'paperclip'
+	gem 'simple_form'
 # ---------------------
 
 # Use SCSS for stylesheets
@@ -46,7 +47,8 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+#gem 'bcrypt-ruby', '~> 3.0.0'
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # Use unicorn as the app server
 # gem 'unicorn'
