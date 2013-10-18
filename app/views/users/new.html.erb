@@ -25,5 +25,13 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
+  <div class="field">
+    <%= f.label :sexo %>
+    <%= f.text_field :sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nac %>
+    <%= f.date_field :fecha_nac %>
+  </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>

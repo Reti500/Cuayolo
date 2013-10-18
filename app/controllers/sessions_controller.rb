@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   		redirect_back_or_to root_url, :notice => "Conectado!"
   	else
   		flash.now.alert = "Email o password invalido"
-  		rende :new	
+  		render :new	
   	end	
   end
 
