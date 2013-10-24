@@ -7,22 +7,58 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div id="container">
-    <div class="user_nav">
-      <% if current_user %>
-        Logged in as <%= current_user.email %>.
-        <%= link_to 'Log out', logout_path%>
-      <% else %>
-        <%= link_to 'Sign up', signup_path%> or
-        <%= link_to 'log in', login_path%> or
-      <% end %>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Cuayolo", root_url, class: "navbar-brand" %>
     </div>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+       
+      </ul>
+      
+      <ul class="nav navbar-form navbar-right">
+        <%= form_tag sessions_path, html: { role: "form", class: "form-inline" } do %>
+          <div class="form-group">
+            <%= text_field_tag :username, nil, class: "form-control input-sm", placeholder: "Nombre de usuario" %>
+          </div>
+          <div class="form-group">
+            <%= password_field_tag :password, nil, class: "form-control input-sm", placeholder: "Contraseña" %>
+          </div>
+          <div class="form-group">
+            <%= submit_tag "Entrar", class: "btn btn-sm btn-success" %>
+          </div>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <br><br><br>
+
+  <section id="body" class="row">
+    <% if flash.count > 0 %>
+      <div id="row">
+        <div class="col-md-9 col-md-push-1">
+            <% flash.each do |name, msg| %>
+              <%= content_tag :div, msg, :id => "flash_#{name}", class: "alert alert-#{name}" %>
+            <% end %>
+        </div>
+      </div>
     <% end %>
-    <%= yield %>
-  </div>
+
+      <div class="col-md-10 col-md-push-1">
+        <%= yield %>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
