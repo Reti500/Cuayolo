@@ -12,9 +12,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new( user_params )
     if @user.save
-      redirect_to root_url, :notice => "Creado!"
+      flash[:success] ="Usuario #{@user.username} creado"
+      redirect_to root_url
+
     else
-      render :new
+      redirect_back_or_to root_url
     end
   end
 
@@ -29,6 +31,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require( :user ).permit( :username, :email, :password, :password_confirmation, :sexo, :fecha_nac )
+      params.permit( :username, :email, :password, :password_confirmation, :sexo, :fecha_nac )
     end
 end
