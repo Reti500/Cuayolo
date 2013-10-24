@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= simple_form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
       <h2>Formulario invalido</h2>
@@ -9,29 +9,32 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <form role="form">
+  <div class="form-group">
+    <%= f.input_field :username, class: "form-control", placeholder: "Nombre de Usuario" %>
+    
   </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group">
+    <%= f.input_field :email, class: "form-control", placeholder: "Correo Electrónico"%>
+    
   </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="form-group">
+    <%= f.input_field :password, class: "form-control", placeholder: "Contraseña" %>
+    
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="form-group">
+    <%= f.input_field :password_confirmation, class: "form-control", placeholder: "Confirmar contraseña"%>
+    
   </div>
-  <div class="field">
-    <%= f.label :sexo %>
-    <%= f.text_field :sexo %>
+  <div class="form-group">
+    <%= f.input_field :sexo, class: "form-control", placeholder: "Sexo"%>
+
   </div>
-  <div class="field">
-    <%= f.label :fecha_nac %>
-    <%= f.date_field :fecha_nac %>
+  <div class="form-group">
+    <%= f.label :fecha_nac, placeholder: "fecha de nacimiento"%>
+    <%= f.input :fecha_nac%>
   </div>
+
+
   <div class="actions"><%= f.submit %></div>
 <% end %>

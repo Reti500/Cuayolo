@@ -18,6 +18,7 @@ end
 	gem 'sorcery'
 	gem 'paperclip'
 	gem 'simple_form'
+	
 # ---------------------
 
 # Use SCSS for stylesheets
