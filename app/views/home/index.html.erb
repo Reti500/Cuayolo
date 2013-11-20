@@ -11,8 +11,8 @@
     </div>
 
   
-
-    <%= form_tag users_path,  class: "col-md-3 col-md-push-8 hidden-sm hidden-xs", role: "form" do %>
+    <div class="signup">
+    <%= form_tag users_path,  class: "hidden-sm hidden-xs form", role: "form" do %>
 
     <div class="form-group">
       <%= text_field_tag :username, nil, class: "form-control", placeholder: "Nombre de Usuario" %>
@@ -43,10 +43,9 @@
     <div class="actions"><%= submit_tag %></div>
 
     <% end %>
+    </div>
   </div>
 </div>
-
-
 
 
 
