@@ -33,7 +33,7 @@ top: 0;
 
 
 div#cabecera{position:fixed;top:0px;background:black;left:0px;z-index:-1;}
-div#{position:fixed; top:50px;}
+div#f{position:fixed; top:50px;}
 div#container-avatar{position:fixed; top:150px; left:5%;}
 div#container-avatares{position:fixed; top:150px; left:5%;}
 div#container-avatar-full{position:fixed; top:150px; left:35%;}
