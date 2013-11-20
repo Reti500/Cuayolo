@@ -1,6 +1,18 @@
-<div id="container" class="container-fluid fontClass home">
+<div id="container" class="container-fluid fontClass ">
 
-  <%= form_tag users_path,  class: "col-md-3 col-md-push-8 hidden-sm hidden-xs", role: "form" do %>
+  <div class="row-fluid">
+  
+    <div class="span10">
+      <ul id="scene" class="scene">
+        <li class="layer" data-depth="0.60"><%= image_tag(asset_url("estrellas1.png"), class: "estrellas") %></li>
+        <li class="layer" data-depth="0.80"><%= image_tag(asset_url("galaxia1.png"), class: "pos_fixed_g2") %></li>
+        <li class="layer" data-depth="0.30"><%= image_tag(asset_url("galaxia2.png"), class: "pos_fixed_g2") %></li>
+      </ul>
+    </div>
+
+  
+
+    <%= form_tag users_path,  class: "col-md-3 col-md-push-8 hidden-sm hidden-xs", role: "form" do %>
 
     <div class="form-group">
       <%= text_field_tag :username, nil, class: "form-control", placeholder: "Nombre de Usuario" %>
@@ -12,7 +24,7 @@
     </div>
     <div class="form-group">
       <%= password_field_tag :password, nil, class: "form-control", placeholder: "Contraseña" %>
-      
+
     </div>
     <div class="form-group">
       <%= password_field_tag :password_confirmation, nil, class: "form-control", placeholder: "Confirmar contraseña"%>
@@ -30,9 +42,10 @@
 
     <div class="actions"><%= submit_tag %></div>
 
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
+
 
 
 
